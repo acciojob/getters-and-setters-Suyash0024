@@ -1,42 +1,33 @@
 //complete this code
 class Person {
-	private _name: string;
-	private _age: number;
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
 
-	constructor(name:string, age:number){
-		this._name = name;
-		this._age = age;
-	}
-
-	get name(): string {
+  // Getter for name
+  get name() {
     return this._name;
   }
 
-	set age(): number {
-		return this._age
-	}
-
-	
+  // Setter for age
+  set age(value) {
+    this._age = value;
+  }
 }
 
 class Student extends Person {
-	study(): void {
+  study() {
     console.log(`${this.name} is studying`);
   }
 }
 
 class Teacher extends Person {
-	teach(): void {
-    console.log(`${this.name} is teaching in javascript`);
+  teach() {
+    console.log(`${this.name} is teaching`);
   }
 }
-const student = new Student("Alice", 20);
-student.study(); 
 
-const teacher = new Teacher("Mr. John", 35);
-teacher.teach(); 
-
-teacher.age = 36; // Using the setter
 
 // Do not change the code below this line
 window.Person = Person;
